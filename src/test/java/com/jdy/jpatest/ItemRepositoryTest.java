@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 public class ItemRepositoryTest {
@@ -34,12 +36,40 @@ public class ItemRepositoryTest {
 
 
     }
+    @Test
+    @DisplayName("테스트 상품 조회")
+    public  void findByItemNmTest() {
+
+       List<Item> itemList = itemRepository.findByItemNm("테스트 상품");
+
+       for(Item item:itemList) {
+           System.out.println(item.toString());
+       }
+
+    }
 
     @Test
-    @DisplayName("상품명 조회")
-    public void findByItemNmTest() {
+    @DisplayName("테스트 상품 상세 조회")
+    public void findByItemOrItemDetailTest() {
 
-        Item item = itemRepository.findById(3);
+        List<Item> itemList = itemRepository.findByItemNmOrItemDetail("테스트 상품","테스트 상품 상세 조회");
+
+        for(Item item:itemList) {
+            System.out.println(item.toString());
+        }
+
+    }
+
+    @Test
+    @DisplayName("10000원 이하 상품 조회")
+    public void findByPriceLessThanEqualTest() {
+
+        List<Item> itemList = itemRepository.findByPriceLessThanEqual(10002);
+
+        for(Item item:itemList) {
+            System.out.println(item.toString());
+        }
+
     }
 
 
