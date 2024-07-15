@@ -61,7 +61,7 @@ public class ItemRepositoryTest {
     }
 
     @Test
-    @DisplayName("10000원 이하 상품 조회")
+    @DisplayName("10002원 이하 상품 조회")
     public void findByPriceLessThanEqualTest() {
 
         List<Item> itemList = itemRepository.findByPriceLessThanEqual(10002);
