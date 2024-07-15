@@ -29,6 +29,12 @@ public class ItemRepositoryTest {
 
         Item saveItem = itemRepository.save(item); //insert 문
         System.out.println(saveItem.toString());
+    }
+
+    @Test
+    @DisplayName("상품명 조회")
+    public void findByItemNmTest() {
+
 
 
     }
