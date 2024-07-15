@@ -37,7 +37,7 @@ public class ItemRepositoryTest {
 
     }
     @Test
-    @DisplayName("테스트 상품 조회")
+    @DisplayName("상품명 조회")
     public  void findByItemNmTest() {
 
        List<Item> itemList = itemRepository.findByItemNm("테스트 상품");
@@ -49,7 +49,7 @@ public class ItemRepositoryTest {
     }
 
     @Test
-    @DisplayName("테스트 상품 상세 조회")
+    @DisplayName("상품명 혹은 상품디테일로 상세 조회")
     public void findByItemOrItemDetailTest() {
 
         List<Item> itemList = itemRepository.findByItemNmOrItemDetail("테스트 상품","테스트 상품 상세 조회");
@@ -61,7 +61,7 @@ public class ItemRepositoryTest {
     }
 
     @Test
-    @DisplayName("10002원 이하 상품 조회")
+    @DisplayName("가격조건으로 상품 조회")
     public void findByPriceLessThanEqualTest() {
 
         List<Item> itemList = itemRepository.findByPriceLessThanEqual(10002);
